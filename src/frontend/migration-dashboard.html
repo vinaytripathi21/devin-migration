@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration dashboard - Bank of Z</title>
+    <link rel="stylesheet" href="css/carbon-styles.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/carbon-overrides.css">
+    <link rel="stylesheet" href="css/migration-dashboard.css?v=2">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="page">
+        <section class="page-banner"><div class="page-inner" id="banner"></div></section>
+
+        <section class="page-content">
+            <div class="page-inner">
+                <div id="notification-container"></div>
+                <div id="content" class="mig-content"></div>
+            </div>
+        </section>
+        <section class="page-content">
+            <div class="page-inner">
+                <section class="mig-section">
+                    <h2>Modernization journey — every step</h2>
+                    <p class="mig-muted">All steps executed for the POC, with results and where the evidence lives. Full detail: doc/modernization-results.docx</p>
+                    <table class="bz-table" id="journey-table">
+                        <thead><tr><th>#</th><th>Step</th><th>Result</th><th>Evidence</th><th>Status</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+
+                <section class="mig-section">
+                    <h2>Mainframe source → Java conversion</h2>
+                    <p class="mig-muted">Every legacy file type in src/base and what Devin converted it into inside src/modern/bankz-app.</p>
+                    <table class="bz-table" id="legacy-java-table">
+                        <thead><tr><th>Legacy type</th><th>Files</th><th>Was</th><th>Converted into</th><th>Location</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+
+                <section class="mig-section">
+                    <h2>Legacy files → Java files (per-file map)</h2>
+                    <p class="mig-muted">Every converted legacy input and the Java file it became — from conversion/README.md and conversion-report.json.</p>
+                    <table class="bz-table mig-report" id="perfile-table">
+                        <thead><tr><th>Legacy file (src/base / conversion/input)</th><th>Java file (src/modern/bankz-app)</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+
+                <section class="mig-section">
+                    <h2>Results in charts</h2>
+                    <div class="mig-charts">
+                        <figure><img src="img/charts/pie_conversion.png" alt="Overall conversion pie chart"><figcaption>Legacy code disposition (33,624 lines)</figcaption></figure>
+                        <figure><img src="img/charts/kpis.png" alt="Quality KPI bar chart"><figcaption>Tests, coverage, eligible conversion</figcaption></figure>
+                        <figure><img src="img/charts/bar_waves.png" alt="Conversion by wave"><figcaption>Legacy vs converted lines per wave</figcaption></figure>
+                        <figure><img src="img/charts/line_progress.png" alt="Cumulative conversion line"><figcaption>Conversion "performance" line</figcaption></figure>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/carbon.js"></script>
+    <script type="module" src="js/migration-dashboard.js?v=2"></script>
+    <script>
+    (function () {
+        const steps = [
+            ['1','Analyzed legacy codebase','132 files / 33,624 lines scanned','scripts/migration-inventory.py','Done'],
+            ['2','Reverse-engineered requirements','12 business rules + BRD/FRD/backlog/traceability','doc/reverse-engineering.md','Done'],
+            ['3','Simulated legacy application','BMS→field model→3270 sim; menu/customer/transfer verified','deliverables/02_legacy_simulation/','Done'],
+            ['4','Converted code to Java','6 waves → one Spring Boot app; 99 files, 95.1% of eligible lines','src/modern/bankz-app, conversion/','Done'],
+            ['5','Validated with tests','36/36 tests pass; 88.5% line / 68.7% branch coverage','conversion/output/test-reports','Done'],
+            ['6','Compared legacy vs modern','Identical scenarios on sim + live API; gaps documented','doc/comparison-validation.md','Done'],
+            ['7','Documented & packaged','7-phase deliverables + consolidated docs + scripts','deliverables/, doc/','Done'],
+            ['8','Defect found (honest gap)','Transfer overdraft check not enforced (G-1); z/OS parity open','doc/comparison-validation.md §7','Open'],
+        ];
+        document.querySelector('#journey-table tbody').innerHTML = steps.map(s =>
+            `<tr><td>${s[0]}</td><td><strong>${s[1]}</strong></td><td>${s[2]}</td>
+             <td class="mono" style="font-size:0.75rem">${s[3]}</td>
+             <td><span class="mig-tag ${s[4]==='Done'?'tag-green':'tag-orange'}">${s[4]}</span></td></tr>`).join('');
+
+        const mapping = [
+            ['.cbl COBOL (CICS)','32','Transaction programs — INQCUST, XFRFUN, DBCRFUN…','Spring services + REST controllers (customer/account/payment)','com.bankz.*'],
+            ['.cbl COBOL (IMS)','11','IB*/LOAD* transaction + loader programs','ImsService + ImsDataLoader + IMS endpoints','com.bankz.ims'],
+            ['.cobol batch','1','Statement/batch logic','StatementService','com.bankz.batch'],
+            ['.pli PL/I','2','IMS login + statement programs','ims / batch services','com.bankz.*'],
+            ['.jcl JCL','2','Job definitions (BNKSTMT*)','StatementJobRunner — REST-triggered','com.bankz.batch'],
+            ['.cpy copybooks','39','Record structures / commareas','JPA entities + DTOs','com.bankz.*.domain/.web'],
+            ['.sql DB2 DDL','—','BANKZ tables','Flyway migrations V1–V3 (PostgreSQL)','db/migration/'],
+            ['.bms BMS maps','10','3270 screen definitions','Web frontend (functional replacement) + sim','src/frontend'],
+            ['.asm DBD/PSB','17','IMS segment definitions','Relational schema V3 (IMS_* tables)','db/migration/'],
+            ['IMS .java + MQ','11','Java helpers / messaging','Not converted — flagged open','—'],
+        ];
+        document.querySelector('#legacy-java-table tbody').innerHTML = mapping.map(m =>
+            `<tr><td class="mono"><strong>${m[0]}</strong></td><td>${m[1]}</td><td>${m[2]}</td>
+             <td>${m[3]}</td><td class="mono" style="font-size:0.75rem">${m[4]}</td></tr>`).join('');
+
+        const perfile = [
+            ['INQCUST.cbl','customer/service/CustomerInquiryService.java'],
+            ['CRECUST.cbl','customer/service/CustomerCreateService.java'],
+            ['CRDTAGY1-5.cbl','customer/service/CreditAgencyService.java'],
+            ['UPDCUST.cbl','customer/service/CustomerUpdateService.java'],
+            ['DELCUS.cbl','customer/service/CustomerDeleteService.java'],
+            ['CREACC, INQACC, INQACCS, INQACCCU, UPDACC, DELACC.cbl','account/service/AccountService.java'],
+            ['DBCRFUN.cbl, XFRFUN.cbl','payment/service/PaymentService.java'],
+            ['INQTRAND.cbl, INQTRANL.cbl','payment/service/TransactionInquiryService.java'],
+            ['GETCOMPY.cbl, GETSCODE.cbl','payment/service/CompanyService.java'],
+            ['ABNDPROC.cbl','common/AbendService.java'],
+            ['BANKDATA.cbl','batch/BankDataGenerator.java'],
+            ['cics/copy/*.cpy (39 copybooks)','domain classes + REST DTOs (customer/domain, account/domain, common/Proctran, ControlRecord)'],
+            ['BNKSTMTC.cbl + BNKSTMTP.pli','batch/StatementService.java'],
+            ['BNKSTMTC.jcl, BNKSTMTP.jcl','batch/StatementJobRunner.java'],
+            ['ims/cobol IB* + ims/pli IBLOGIN.pli','ims/ImsService.java, ims/ImsController.java'],
+            ['ims/cobol LOAD*.cbl','ims/ImsDataLoader.java'],
+            ['ims/LoadData/*.data','src/main/resources/ims-data/*.data'],
+            ['db2/cics-Db2-create.j2','db/migration/V1__create_customer.sql, V2__create_account_proctran_control.sql'],
+            ['ims/DBD/*.asm + PSB/*.asm','db/migration/V3__create_ims_tables.sql'],
+            ['api/openapi.yaml','customer/web, account/web, payment/web controllers'],
+            ['BNK1*/BNKMENU.cbl + *.bms (22 screen files)','Replaced by src/frontend web pages + BMS simulator'],
+        ];
+        document.querySelector('#perfile-table tbody').innerHTML = perfile.map(r =>
+            `<tr><td class="mono" style="font-size:0.75rem">${r[0]}</td>
+             <td class="mono" style="font-size:0.75rem">${r[1]}</td></tr>`).join('');
+    })();
+    </script>
+</body>
+</html>

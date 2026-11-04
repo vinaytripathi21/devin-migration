@@ -1,0 +1,47 @@
+[
+  {
+    "scene": "scene0_legacy_sim_menu",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene0_legacy_sim_menu.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene1_legacy_customer",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene1_legacy_customer.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene2_codebase_scan",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene2_codebase_scan.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene3_converted_java",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene3_converted_java.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene4_mvn_test",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene4_mvn_test.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene5_modern_app",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene5_modern_app.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene6_api_evidence",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene6_api_evidence.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene7_dashboard",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene7_dashboard.png",
+    "kind": "image"
+  },
+  {
+    "scene": "scene8_gaps_doc",
+    "file": "/Users/vinaytripathi/Desktop/Bank-of-Z/deliverables/06_demo/recording/scene8_gaps_doc.png",
+    "kind": "image"
+  }
+]

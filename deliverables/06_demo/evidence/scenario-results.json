@@ -1,0 +1,186 @@
+{
+  "captured_at": "2026-11-04 19:08:27",
+  "scenarios": {
+    "s1_customer": {
+      "method": "GET",
+      "url": "http://localhost:8085/api/customers/1",
+      "body": null,
+      "response": {
+        "customerId": "0000000001",
+        "title": "Mr",
+        "firstName": "John",
+        "lastName": "Smith",
+        "dateOfBirth": "1985-06-15",
+        "phoneNumber": "+44 20 7946 0958",
+        "address": {
+          "addressLine1": "123 High Street",
+          "addressLine2": "Apartment 4B",
+          "city": "London",
+          "postalCode": "SW1A 1AA",
+          "country": "United Kingdom"
+        },
+        "customerStatus": "ACTIVE",
+        "createdDate": "2020-01-15T00:00:00Z"
+      }
+    },
+    "s2_account": {
+      "method": "GET",
+      "url": "http://localhost:8085/api/accounts/2",
+      "body": null,
+      "response": {
+        "accountId": "00000002",
+        "accountType": "SAVING",
+        "currency": "GBP",
+        "accountNumber": "00000002",
+        "sortCode": "987654",
+        "status": "ACTIVE",
+        "openingDate": "2020-02-01",
+        "customerId": "0000000001",
+        "interestRate": 2.5,
+        "overdraftLimit": 0,
+        "availableBalance": 40007999.96,
+        "actualBalance": 40007999.96,
+        "lastStatementDate": "2026-10-01",
+        "nextStatementDate": "2026-11-01"
+      }
+    },
+    "s3_transfer": {
+      "method": "POST",
+      "url": "http://localhost:8085/api/accounts/2/transfer",
+      "body": {
+        "toAccountId": "1",
+        "amount": 100.0,
+        "fromSortCode": "987654",
+        "toSortCode": "987654"
+      },
+      "response": {
+        "fromAccountAvailableBalance": 40007899.96,
+        "fromAccountActualBalance": 40007899.96,
+        "toAccountAvailableBalance": -39998249.21,
+        "toAccountActualBalance": -39998249.21,
+        "transactionReference": "20261104190827000000000009"
+      }
+    },
+    "s3_balances_from": {
+      "method": "GET",
+      "url": "http://localhost:8085/api/accounts/2/balances",
+      "body": null,
+      "response": {
+        "creditDebitIndicator": "CREDIT",
+        "balanceType": "AVAILABLE",
+        "amount": 40007899.96,
+        "currency": "GBP",
+        "actualBalance": 40007899.96,
+        "dateTime": "2026-10-01T00:00:00Z"
+      }
+    },
+    "s3_balances_to": {
+      "method": "GET",
+      "url": "http://localhost:8085/api/accounts/1/balances",
+      "body": null,
+      "response": {
+        "creditDebitIndicator": "DEBIT",
+        "balanceType": "AVAILABLE",
+        "amount": -39998249.21,
+        "currency": "GBP",
+        "actualBalance": -39998249.21,
+        "dateTime": "2026-10-01T00:00:00Z"
+      }
+    },
+    "s3_transactions": {
+      "method": "GET",
+      "url": "http://localhost:8085/api/accounts/2/transactions",
+      "body": null,
+      "response": {
+        "transactions": [
+          {
+            "transactionId": "20261104190827000000000009",
+            "accountId": "00000002",
+            "amount": -100.0,
+            "currency": "GBP",
+            "creditDebitIndicator": "DEBIT",
+            "status": "BOOKED",
+            "bookingDateTime": "2026-11-04T19:08:27Z",
+            "transactionType": "TFR",
+            "transactionInformation": "TRANSFER                  98765400000001"
+          },
+          {
+            "transactionId": "20261104190646000000000007",
+            "accountId": "00000002",
+            "amount": -100.0,
+            "currency": "GBP",
+            "creditDebitIndicator": "DEBIT",
+            "status": "BOOKED",
+            "bookingDateTime": "2026-11-04T19:06:46Z",
+            "transactionType": "TFR",
+            "transactionInformation": "TRANSFER                  98765400000001"
+          },
+          {
+            "transactionId": "20261104190631000000000005",
+            "accountId": "00000002",
+            "amount": -100.0,
+            "currency": "GBP",
+            "creditDebitIndicator": "DEBIT",
+            "status": "BOOKED",
+            "bookingDateTime": "2026-11-04T19:06:31Z",
+            "transactionType": "TFR",
+            "transactionInformation": "TRANSFER                  98765400000001"
+          },
+          {
+            "transactionId": "20261104190608000000000003",
+            "accountId": "00000002",
+            "amount": -100.0,
+            "currency": "GBP",
+            "creditDebitIndicator": "DEBIT",
+            "status": "BOOKED",
+            "bookingDateTime": "2026-11-04T19:06:08Z",
+            "transactionType": "TFR",
+            "transactionInformation": "TRANSFER                  98765400000001"
+          },
+          {
+            "transactionId": "20261104185647000000000001",
+            "accountId": "00000002",
+            "amount": -100.0,
+            "currency": "GBP",
+            "creditDebitIndicator": "DEBIT",
+            "status": "BOOKED",
+            "bookingDateTime": "2026-11-04T18:56:47Z",
+            "transactionType": "TFR",
+            "transactionInformation": "TRANSFER                  98765400000001"
+          },
+          {
+            "transactionId": "20261030101500000000000903",
+            "accountId": "00000002",
+            "amount": 1200.0,
+            "currency": "GBP",
+            "creditDebitIndicator": "CREDIT",
+            "status": "BOOKED",
+            "bookingDateTime": "2026-10-30T10:15:00Z",
+            "transactionType": "PCR",
+            "transactionInformation": "SALARY"
+          }
+        ],
+        "totalCount": 6,
+        "limit": 50,
+        "offset": 0
+      }
+    },
+    "s4_insufficient": {
+      "method": "POST",
+      "url": "http://localhost:8085/api/accounts/1/transfer",
+      "body": {
+        "toAccountId": "2",
+        "amount": 9999999.99,
+        "fromSortCode": "987654",
+        "toSortCode": "987654"
+      },
+      "response": {
+        "fromAccountAvailableBalance": -49998249.2,
+        "fromAccountActualBalance": -49998249.2,
+        "toAccountAvailableBalance": 50007899.95,
+        "toAccountActualBalance": 50007899.95,
+        "transactionReference": "20261104190827000000000010"
+      }
+    }
+  }
+}

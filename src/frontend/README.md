@@ -80,6 +80,7 @@ The sort code is always `987654` and is not user-editable. It is not shown on an
 | `account-deposit.html` | Credit or debit an account |
 | `account-transactions.html` | Transaction history with date filters and paging |
 | `transaction-details.html` | A single transaction |
+| `migration-dashboard.html` | Mainframe → Spring Boot / React / PostgreSQL migration progress, tests and performance. Reads `data/migration-status.json` (generate with `python3 scripts/migration-inventory.py`) |
 | `account-transfer.html` | Transfer from an account. Destination is either an account number (press Enter) or a customer ID, which lists that customer's accounts to choose from |
 
 Deleting a customer or account is only possible from its detail page, behind a confirmation dialog.
@@ -231,3 +232,19 @@ See `CONTRIBUTING.md` in the root directory.
 ---
 
 Built with Vanilla JavaScript, Static HTML, and Carbon Design System.
+
+## Measured conversion report
+
+The migration dashboard reads `data/conversion-report.json` when it exists and shows measured figures:
+converted files and lines, the legacy → Java file map, test results, code coverage, API response times and open work.
+
+Refresh it from the repo root (start the Spring Boot app on port 8085 first to measure response times):
+
+```
+python3 scripts/conversion-report.py
+```
+
+It reads `conversion/input`, `conversion/output` and the test reports in `conversion/output/test-reports`
+(Surefire XML and JaCoCo `jacoco.csv`, produced by
+`mvn org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.12:report`
+in `src/modern/bankz-app`), and also updates component statuses in `data/migration-status.json`.

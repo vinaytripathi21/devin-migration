@@ -17,6 +17,7 @@ export function createHeader() {
                 <cds-header-nav-item href="admin.html#find-customer">Find customer</cds-header-nav-item>
                 <cds-header-nav-item href="admin.html#find-account">Find account</cds-header-nav-item>
                 <cds-header-nav-item href="customer-create.html">Create customer</cds-header-nav-item>
+                <cds-header-nav-item href="migration-dashboard.html">Migration dashboard</cds-header-nav-item>
             </cds-header-nav>
         </cds-header>
     `;

@@ -1,0 +1,1998 @@
+{
+  "generatedAt": "2026-11-04T15:49:45+05:30",
+  "measured": true,
+  "sourceRevision": "35415c89da4a3d1e34e286d950477cac0bb43968",
+  "summary": {
+    "legacyFiles": 132,
+    "legacyLines": 33624,
+    "convertedFiles": 99,
+    "convertedLines": 20670,
+    "replacedFiles": 22,
+    "replacedLines": 11885,
+    "notConvertedFiles": 11,
+    "notConvertedLines": 1069,
+    "javaFiles": 53,
+    "javaLines": 2434,
+    "testFiles": 6,
+    "testLines": 512,
+    "sqlFiles": 5,
+    "sqlLines": 140,
+    "inputFiles": 112,
+    "outputFiles": 81
+  },
+  "javaPackages": [
+    {
+      "name": "com.bankz",
+      "files": 1,
+      "lines": 9
+    },
+    {
+      "name": "com.bankz.account.domain",
+      "files": 3,
+      "lines": 111
+    },
+    {
+      "name": "com.bankz.account.service",
+      "files": 2,
+      "lines": 150
+    },
+    {
+      "name": "com.bankz.account.web",
+      "files": 2,
+      "lines": 104
+    },
+    {
+      "name": "com.bankz.batch",
+      "files": 5,
+      "lines": 474
+    },
+    {
+      "name": "com.bankz.common",
+      "files": 13,
+      "lines": 320
+    },
+    {
+      "name": "com.bankz.common.web",
+      "files": 3,
+      "lines": 75
+    },
+    {
+      "name": "com.bankz.customer.domain",
+      "files": 3,
+      "lines": 118
+    },
+    {
+      "name": "com.bankz.customer.service",
+      "files": 10,
+      "lines": 353
+    },
+    {
+      "name": "com.bankz.customer.web",
+      "files": 3,
+      "lines": 149
+    },
+    {
+      "name": "com.bankz.ims",
+      "files": 3,
+      "lines": 283
+    },
+    {
+      "name": "com.bankz.payment.service",
+      "files": 3,
+      "lines": 166
+    },
+    {
+      "name": "com.bankz.payment.web",
+      "files": 2,
+      "lines": 122
+    }
+  ],
+  "groups": [
+    {
+      "id": "inqcust",
+      "wave": "Customers",
+      "title": "Customer inquiry",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/INQCUST.cbl",
+          "language": "COBOL",
+          "lines": 655
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/customer/service/CustomerInquiryService.java",
+          "kind": "Java",
+          "lines": 69
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/service/CustomerNotFoundException.java",
+          "kind": "Java",
+          "lines": 9
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/service/RandomConfig.java",
+          "kind": "Java",
+          "lines": 12
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/web/CustomerController.java",
+          "kind": "Java",
+          "lines": 101
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/web/CustomerResponse.java",
+          "kind": "Java",
+          "lines": 41
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/web/InvalidCustomerIdException.java",
+          "kind": "Java",
+          "lines": 7
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 655,
+      "outputLines": 239,
+      "tests": [
+        "CustomerInquiryServiceTest",
+        "CustomerControllerIntegrationTest",
+        "CustomerResponseTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "crecust",
+      "wave": "Customers",
+      "title": "Customer create + credit agencies",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/CRECUST.cbl",
+          "language": "COBOL",
+          "lines": 1345
+        },
+        {
+          "path": "cics/cobol/CRDTAGY1.cbl",
+          "language": "COBOL",
+          "lines": 202
+        },
+        {
+          "path": "cics/cobol/CRDTAGY2.cbl",
+          "language": "COBOL",
+          "lines": 202
+        },
+        {
+          "path": "cics/cobol/CRDTAGY3.cbl",
+          "language": "COBOL",
+          "lines": 202
+        },
+        {
+          "path": "cics/cobol/CRDTAGY4.cbl",
+          "language": "COBOL",
+          "lines": 202
+        },
+        {
+          "path": "cics/cobol/CRDTAGY5.cbl",
+          "language": "COBOL",
+          "lines": 202
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/customer/service/CustomerCreateService.java",
+          "kind": "Java",
+          "lines": 90
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/service/CreditAgencyService.java",
+          "kind": "Java",
+          "lines": 63
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/service/NewCustomer.java",
+          "kind": "Java",
+          "lines": 6
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/service/Titles.java",
+          "kind": "Java",
+          "lines": 12
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 2355,
+      "outputLines": 171,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "updcust",
+      "wave": "Customers",
+      "title": "Customer update",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/UPDCUST.cbl",
+          "language": "COBOL",
+          "lines": 387
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/customer/service/CustomerUpdateService.java",
+          "kind": "Java",
+          "lines": 49
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/service/CustomerChanges.java",
+          "kind": "Java",
+          "lines": 6
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 387,
+      "outputLines": 55,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "delcus",
+      "wave": "Customers",
+      "title": "Customer delete",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/DELCUS.cbl",
+          "language": "COBOL",
+          "lines": 735
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/customer/service/CustomerDeleteService.java",
+          "kind": "Java",
+          "lines": 37
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 735,
+      "outputLines": 37,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "accounts",
+      "wave": "Accounts",
+      "title": "Account create, inquire, list, update, delete",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/CREACC.cbl",
+          "language": "COBOL",
+          "lines": 1070
+        },
+        {
+          "path": "cics/cobol/INQACC.cbl",
+          "language": "COBOL",
+          "lines": 820
+        },
+        {
+          "path": "cics/cobol/INQACCS.cbl",
+          "language": "COBOL",
+          "lines": 311
+        },
+        {
+          "path": "cics/cobol/INQACCCU.cbl",
+          "language": "COBOL",
+          "lines": 707
+        },
+        {
+          "path": "cics/cobol/UPDACC.cbl",
+          "language": "COBOL",
+          "lines": 337
+        },
+        {
+          "path": "cics/cobol/DELACC.cbl",
+          "language": "COBOL",
+          "lines": 526
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/account/service/AccountService.java",
+          "kind": "Java",
+          "lines": 144
+        },
+        {
+          "path": "src/main/java/com/bankz/account/service/NewAccount.java",
+          "kind": "Java",
+          "lines": 6
+        },
+        {
+          "path": "src/main/java/com/bankz/account/web/AccountController.java",
+          "kind": "Java",
+          "lines": 87
+        },
+        {
+          "path": "src/main/java/com/bankz/account/web/AccountResponse.java",
+          "kind": "Java",
+          "lines": 17
+        },
+        {
+          "path": "src/main/java/com/bankz/account/domain/Account.java",
+          "kind": "Java",
+          "lines": 78
+        },
+        {
+          "path": "src/main/java/com/bankz/account/domain/AccountKey.java",
+          "kind": "Java",
+          "lines": 13
+        },
+        {
+          "path": "src/main/java/com/bankz/account/domain/AccountRepository.java",
+          "kind": "Java",
+          "lines": 20
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 3771,
+      "outputLines": 365,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "payments",
+      "wave": "Payments",
+      "title": "Debit/credit and transfer",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/DBCRFUN.cbl",
+          "language": "COBOL",
+          "lines": 709
+        },
+        {
+          "path": "cics/cobol/XFRFUN.cbl",
+          "language": "COBOL",
+          "lines": 1683
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/payment/service/PaymentService.java",
+          "kind": "Java",
+          "lines": 90
+        },
+        {
+          "path": "src/main/java/com/bankz/payment/web/PaymentController.java",
+          "kind": "Java",
+          "lines": 105
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 2392,
+      "outputLines": 195,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "transactions",
+      "wave": "Payments",
+      "title": "Transaction inquiry",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/INQTRAND.cbl",
+          "language": "COBOL",
+          "lines": 351
+        },
+        {
+          "path": "cics/cobol/INQTRANL.cbl",
+          "language": "COBOL",
+          "lines": 527
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/payment/service/TransactionInquiryService.java",
+          "kind": "Java",
+          "lines": 57
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 878,
+      "outputLines": 57,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "company",
+      "wave": "Payments",
+      "title": "Company name and sort code",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/GETCOMPY.cbl",
+          "language": "COBOL",
+          "lines": 28
+        },
+        {
+          "path": "cics/cobol/GETSCODE.cbl",
+          "language": "COBOL",
+          "lines": 30
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/payment/service/CompanyService.java",
+          "kind": "Java",
+          "lines": 19
+        },
+        {
+          "path": "src/main/java/com/bankz/payment/web/CompanyController.java",
+          "kind": "Java",
+          "lines": 17
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 58,
+      "outputLines": 36,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "abend",
+      "wave": "Payments",
+      "title": "Abend handling",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/ABNDPROC.cbl",
+          "language": "COBOL",
+          "lines": 129
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/common/AbendService.java",
+          "kind": "Java",
+          "lines": 24
+        },
+        {
+          "path": "src/main/java/com/bankz/common/AbendRecord.java",
+          "kind": "Java",
+          "lines": 36
+        },
+        {
+          "path": "src/main/java/com/bankz/common/AbendRecordRepository.java",
+          "kind": "Java",
+          "lines": 4
+        },
+        {
+          "path": "src/main/java/com/bankz/common/AbendException.java",
+          "kind": "Java",
+          "lines": 18
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 129,
+      "outputLines": 82,
+      "tests": [
+        "BankFlowIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "data-layouts",
+      "wave": "Shared",
+      "title": "CICS copybooks and DB2 tables",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/copy/ABNDINFO.cpy",
+          "language": "Copybook",
+          "lines": 22
+        },
+        {
+          "path": "cics/copy/ACCDB2.cpy",
+          "language": "Copybook",
+          "lines": 20
+        },
+        {
+          "path": "cics/copy/ACCOUNT.cpy",
+          "language": "Copybook",
+          "lines": 35
+        },
+        {
+          "path": "cics/copy/ACCTCTRL.cpy",
+          "language": "Copybook",
+          "lines": 25
+        },
+        {
+          "path": "cics/copy/CONTDB2.cpy",
+          "language": "Copybook",
+          "lines": 11
+        },
+        {
+          "path": "cics/copy/CONTROLI.cpy",
+          "language": "Copybook",
+          "lines": 10
+        },
+        {
+          "path": "cics/copy/CREACC.cpy",
+          "language": "Copybook",
+          "lines": 33
+        },
+        {
+          "path": "cics/copy/CRECUST.cpy",
+          "language": "Copybook",
+          "lines": 37
+        },
+        {
+          "path": "cics/copy/CUSTCTRL.cpy",
+          "language": "Copybook",
+          "lines": 22
+        },
+        {
+          "path": "cics/copy/CUSTDB2.cpy",
+          "language": "Copybook",
+          "lines": 26
+        },
+        {
+          "path": "cics/copy/CUSTOMER.cpy",
+          "language": "Copybook",
+          "lines": 40
+        },
+        {
+          "path": "cics/copy/DELACC.cpy",
+          "language": "Copybook",
+          "lines": 39
+        },
+        {
+          "path": "cics/copy/DELACCZ.cpy",
+          "language": "Copybook",
+          "lines": 38
+        },
+        {
+          "path": "cics/copy/DELCUS.cpy",
+          "language": "Copybook",
+          "lines": 36
+        },
+        {
+          "path": "cics/copy/GETCOMPY.cpy",
+          "language": "Copybook",
+          "lines": 8
+        },
+        {
+          "path": "cics/copy/GETSCODE.cpy",
+          "language": "Copybook",
+          "lines": 8
+        },
+        {
+          "path": "cics/copy/INQACC.cpy",
+          "language": "Copybook",
+          "lines": 33
+        },
+        {
+          "path": "cics/copy/INQACCCU.cpy",
+          "language": "Copybook",
+          "lines": 38
+        },
+        {
+          "path": "cics/copy/INQACCCZ.cpy",
+          "language": "Copybook",
+          "lines": 38
+        },
+        {
+          "path": "cics/copy/INQACCS.cpy",
+          "language": "Copybook",
+          "lines": 36
+        },
+        {
+          "path": "cics/copy/INQACCSZ.cpy",
+          "language": "Copybook",
+          "lines": 37
+        },
+        {
+          "path": "cics/copy/INQACCZ.cpy",
+          "language": "Copybook",
+          "lines": 33
+        },
+        {
+          "path": "cics/copy/INQCUSTZ.cpy",
+          "language": "Copybook",
+          "lines": 36
+        },
+        {
+          "path": "cics/copy/INQTRAND.cpy",
+          "language": "Copybook",
+          "lines": 45
+        },
+        {
+          "path": "cics/copy/INQTRANL.cpy",
+          "language": "Copybook",
+          "lines": 50
+        },
+        {
+          "path": "cics/copy/NEWACCNO.cpy",
+          "language": "Copybook",
+          "lines": 13
+        },
+        {
+          "path": "cics/copy/NEWCUSNO.cpy",
+          "language": "Copybook",
+          "lines": 13
+        },
+        {
+          "path": "cics/copy/PAYDBCR.cpy",
+          "language": "Copybook",
+          "lines": 21
+        },
+        {
+          "path": "cics/copy/PAYDBCRZ.cpy",
+          "language": "Copybook",
+          "lines": 21
+        },
+        {
+          "path": "cics/copy/PROCDB2.cpy",
+          "language": "Copybook",
+          "lines": 19
+        },
+        {
+          "path": "cics/copy/PROCISRT.cpy",
+          "language": "Copybook",
+          "lines": 84
+        },
+        {
+          "path": "cics/copy/PROCTRAN.cpy",
+          "language": "Copybook",
+          "lines": 103
+        },
+        {
+          "path": "cics/copy/RESPSTR.cpy",
+          "language": "Copybook",
+          "lines": 247
+        },
+        {
+          "path": "cics/copy/SORTCODE.cpy",
+          "language": "Copybook",
+          "lines": 7
+        },
+        {
+          "path": "cics/copy/STCUSTNO.cpy",
+          "language": "Copybook",
+          "lines": 8
+        },
+        {
+          "path": "cics/copy/UPDACC.cpy",
+          "language": "Copybook",
+          "lines": 31
+        },
+        {
+          "path": "cics/copy/UPDCUST.cpy",
+          "language": "Copybook",
+          "lines": 36
+        },
+        {
+          "path": "cics/copy/WAZI.cpy",
+          "language": "Copybook",
+          "lines": 8
+        },
+        {
+          "path": "cics/copy/XFRFUN.cpy",
+          "language": "Copybook",
+          "lines": 17
+        }
+      ],
+      "extraInput": [
+        "db2/cics-Db2-create.j2"
+      ],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/customer/domain/Customer.java",
+          "kind": "Java",
+          "lines": 98
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/domain/CustomerKey.java",
+          "kind": "Java",
+          "lines": 13
+        },
+        {
+          "path": "src/main/java/com/bankz/customer/domain/CustomerRepository.java",
+          "kind": "Java",
+          "lines": 7
+        },
+        {
+          "path": "src/main/java/com/bankz/common/Proctran.java",
+          "kind": "Java",
+          "lines": 60
+        },
+        {
+          "path": "src/main/java/com/bankz/common/ProctranRepository.java",
+          "kind": "Java",
+          "lines": 28
+        },
+        {
+          "path": "src/main/java/com/bankz/common/ProctranWriter.java",
+          "kind": "Java",
+          "lines": 25
+        },
+        {
+          "path": "src/main/java/com/bankz/common/ControlRecord.java",
+          "kind": "Java",
+          "lines": 27
+        },
+        {
+          "path": "src/main/java/com/bankz/common/ControlRepository.java",
+          "kind": "Java",
+          "lines": 13
+        },
+        {
+          "path": "src/main/java/com/bankz/common/LegacyFormat.java",
+          "kind": "Java",
+          "lines": 50
+        },
+        {
+          "path": "src/main/java/com/bankz/common/BusinessFailureException.java",
+          "kind": "Java",
+          "lines": 14
+        },
+        {
+          "path": "src/main/java/com/bankz/common/InvalidRequestException.java",
+          "kind": "Java",
+          "lines": 7
+        },
+        {
+          "path": "src/main/java/com/bankz/common/ClockConfig.java",
+          "kind": "Java",
+          "lines": 14
+        },
+        {
+          "path": "src/main/java/com/bankz/common/web/GlobalExceptionHandler.java",
+          "kind": "Java",
+          "lines": 40
+        },
+        {
+          "path": "src/main/java/com/bankz/common/web/Ids.java",
+          "kind": "Java",
+          "lines": 18
+        },
+        {
+          "path": "src/main/java/com/bankz/common/web/WebConfig.java",
+          "kind": "Java",
+          "lines": 17
+        },
+        {
+          "path": "src/main/java/com/bankz/BankzApplication.java",
+          "kind": "Java",
+          "lines": 9
+        },
+        {
+          "path": "src/main/resources/db/migration/V1__create_customer.sql",
+          "kind": "SQL",
+          "lines": 22
+        },
+        {
+          "path": "src/main/resources/db/migration/V2__create_account_proctran_control.sql",
+          "kind": "SQL",
+          "lines": 51
+        },
+        {
+          "path": "src/main/resources/application.yml",
+          "kind": "Config",
+          "lines": 24
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 1384,
+      "outputLines": 537,
+      "tests": [
+        "BankFlowIntegrationTest",
+        "CustomerInquiryServiceTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "bankdata",
+      "wave": "Batch",
+      "title": "BANKDATA test-data generator",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "cics/cobol/BANKDATA.cbl",
+          "language": "COBOL",
+          "lines": 1636
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/batch/BankDataGenerator.java",
+          "kind": "Java",
+          "lines": 125
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 1636,
+      "outputLines": 125,
+      "tests": [
+        "BatchIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "statements",
+      "wave": "Batch",
+      "title": "Monthly statements",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "batch/cobol/BNKSTMTC.cbl",
+          "language": "COBOL",
+          "lines": 1696
+        },
+        {
+          "path": "batch/pli/BNKSTMTP.pli",
+          "language": "PL/I",
+          "lines": 751
+        }
+      ],
+      "extraInput": [
+        "batch/MonthlyStatementSpecification.md"
+      ],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/batch/StatementService.java",
+          "kind": "Java",
+          "lines": 256
+        },
+        {
+          "path": "src/main/java/com/bankz/batch/StatementResult.java",
+          "kind": "Java",
+          "lines": 5
+        },
+        {
+          "path": "src/main/java/com/bankz/batch/BatchController.java",
+          "kind": "Java",
+          "lines": 36
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 2447,
+      "outputLines": 297,
+      "tests": [
+        "BatchIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "jcl",
+      "wave": "Batch",
+      "title": "Statement JCL jobs",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "batch/jcl/BNKSTMTC.jcl",
+          "language": "JCL",
+          "lines": 55
+        },
+        {
+          "path": "batch/jcl/BNKSTMTP.jcl",
+          "language": "JCL",
+          "lines": 24
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/batch/StatementJobRunner.java",
+          "kind": "Java",
+          "lines": 52
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 79,
+      "outputLines": 52,
+      "tests": [
+        "BatchIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "ims-tran",
+      "wave": "IMS",
+      "title": "IMS transactions (login, customer, summary, deposit/withdraw)",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "ims/cobol/IBACSUM.cbl",
+          "language": "COBOL",
+          "lines": 245
+        },
+        {
+          "path": "ims/cobol/IBGCUDAT.cbl",
+          "language": "COBOL",
+          "lines": 186
+        },
+        {
+          "path": "ims/cobol/IBLOGIN1.cbl",
+          "language": "COBOL",
+          "lines": 244
+        },
+        {
+          "path": "ims/cobol/IBLOGOUT.cbl",
+          "language": "COBOL",
+          "lines": 183
+        },
+        {
+          "path": "ims/cobol/IBSCUDAT.cbl",
+          "language": "COBOL",
+          "lines": 267
+        },
+        {
+          "path": "ims/cobol/IBTRAN.cbl",
+          "language": "COBOL",
+          "lines": 492
+        },
+        {
+          "path": "ims/pli/IBLOGIN.pli",
+          "language": "PL/I",
+          "lines": 295
+        },
+        {
+          "path": "ims/copy/IBGHIST.cpy",
+          "language": "Copybook",
+          "lines": 26
+        },
+        {
+          "path": "ims/copy/IBSHIST.cpy",
+          "language": "Copybook",
+          "lines": 26
+        },
+        {
+          "path": "ims/copy/IBTRAN.cpy",
+          "language": "Copybook",
+          "lines": 33
+        },
+        {
+          "path": "ims/copy/JNI.cpy",
+          "language": "Copybook",
+          "lines": 311
+        },
+        {
+          "path": "ims/PSB/IB.asm",
+          "language": "Assembler",
+          "lines": 38
+        },
+        {
+          "path": "ims/PSB/IBACSUM.asm",
+          "language": "Assembler",
+          "lines": 17
+        },
+        {
+          "path": "ims/PSB/IBGCUDAT.asm",
+          "language": "Assembler",
+          "lines": 14
+        },
+        {
+          "path": "ims/PSB/IBLOAD.asm",
+          "language": "Assembler",
+          "lines": 38
+        },
+        {
+          "path": "ims/PSB/IBLOGIN.asm",
+          "language": "Assembler",
+          "lines": 14
+        },
+        {
+          "path": "ims/PSB/IBLOGOUT.asm",
+          "language": "Assembler",
+          "lines": 14
+        },
+        {
+          "path": "ims/PSB/IBSCUDAT.asm",
+          "language": "Assembler",
+          "lines": 14
+        },
+        {
+          "path": "ims/PSB/IBTRAN.asm",
+          "language": "Assembler",
+          "lines": 20
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/ims/ImsService.java",
+          "kind": "Java",
+          "lines": 129
+        },
+        {
+          "path": "src/main/java/com/bankz/ims/ImsController.java",
+          "kind": "Java",
+          "lines": 68
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 2477,
+      "outputLines": 197,
+      "tests": [
+        "ImsIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "ims-load",
+      "wave": "IMS",
+      "title": "IMS database load programs",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "ims/cobol/LOADACCT.cbl",
+          "language": "COBOL",
+          "lines": 150
+        },
+        {
+          "path": "ims/cobol/LOADCUSA.cbl",
+          "language": "COBOL",
+          "lines": 146
+        },
+        {
+          "path": "ims/cobol/LOADCUST.cbl",
+          "language": "COBOL",
+          "lines": 182
+        },
+        {
+          "path": "ims/cobol/LOADHIST.cbl",
+          "language": "COBOL",
+          "lines": 161
+        },
+        {
+          "path": "ims/cobol/LOADTSTA.cbl",
+          "language": "COBOL",
+          "lines": 154
+        }
+      ],
+      "extraInput": [
+        "ims/LoadData/ACCOUNT.data",
+        "ims/LoadData/ACCTYPE.data",
+        "ims/LoadData/CUSTACCS.data",
+        "ims/LoadData/CUSTOMER.data",
+        "ims/LoadData/CUSTTYPE.data",
+        "ims/LoadData/HISTORY.data",
+        "ims/LoadData/TSTAT.data",
+        "ims/LoadData/TSTATTYP.data",
+        "ims/LoadData/TTYPE.data"
+      ],
+      "output": [
+        {
+          "path": "src/main/java/com/bankz/ims/ImsDataLoader.java",
+          "kind": "Java",
+          "lines": 86
+        },
+        {
+          "path": "src/main/resources/ims-data/ACCOUNT.data",
+          "kind": "Data",
+          "lines": 265
+        },
+        {
+          "path": "src/main/resources/ims-data/ACCTYPE.data",
+          "kind": "Data",
+          "lines": 2
+        },
+        {
+          "path": "src/main/resources/ims-data/CUSTACCS.data",
+          "kind": "Data",
+          "lines": 265
+        },
+        {
+          "path": "src/main/resources/ims-data/CUSTOMER.data",
+          "kind": "Data",
+          "lines": 100
+        },
+        {
+          "path": "src/main/resources/ims-data/CUSTTYPE.data",
+          "kind": "Data",
+          "lines": 2
+        },
+        {
+          "path": "src/main/resources/ims-data/HISTORY.data",
+          "kind": "Data",
+          "lines": 265
+        },
+        {
+          "path": "src/main/resources/ims-data/TSTAT.data",
+          "kind": "Data",
+          "lines": 265
+        },
+        {
+          "path": "src/main/resources/ims-data/TSTATTYP.data",
+          "kind": "Data",
+          "lines": 2
+        },
+        {
+          "path": "src/main/resources/ims-data/TTYPE.data",
+          "kind": "Data",
+          "lines": 3
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 793,
+      "outputLines": 1255,
+      "tests": [
+        "ImsIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "ims-dbd",
+      "wave": "IMS",
+      "title": "IMS database definitions",
+      "status": "converted",
+      "legacy": [
+        {
+          "path": "ims/DBD/ACCOUNT.asm",
+          "language": "Assembler",
+          "lines": 51
+        },
+        {
+          "path": "ims/DBD/ACCTYPE.asm",
+          "language": "Assembler",
+          "lines": 42
+        },
+        {
+          "path": "ims/DBD/CUSTACCS.asm",
+          "language": "Assembler",
+          "lines": 52
+        },
+        {
+          "path": "ims/DBD/CUSTOMER.asm",
+          "language": "Assembler",
+          "lines": 96
+        },
+        {
+          "path": "ims/DBD/CUSTTYPE.asm",
+          "language": "Assembler",
+          "lines": 43
+        },
+        {
+          "path": "ims/DBD/HISTORY.asm",
+          "language": "Assembler",
+          "lines": 68
+        },
+        {
+          "path": "ims/DBD/TSTAT.asm",
+          "language": "Assembler",
+          "lines": 65
+        },
+        {
+          "path": "ims/DBD/TSTATTYP.asm",
+          "language": "Assembler",
+          "lines": 34
+        },
+        {
+          "path": "ims/DBD/TTYPE.asm",
+          "language": "Assembler",
+          "lines": 43
+        }
+      ],
+      "extraInput": [],
+      "output": [
+        {
+          "path": "src/main/resources/db/migration/V3__create_ims_tables.sql",
+          "kind": "SQL",
+          "lines": 50
+        }
+      ],
+      "frontend": [],
+      "legacyLines": 494,
+      "outputLines": 50,
+      "tests": [
+        "ImsIntegrationTest"
+      ],
+      "note": ""
+    },
+    {
+      "id": "screens",
+      "wave": "Screens",
+      "title": "3270 screens (BMS maps + screen programs)",
+      "status": "replaced",
+      "legacy": [
+        {
+          "path": "cics/cobol/BNK1CAC.cbl",
+          "language": "COBOL",
+          "lines": 1093
+        },
+        {
+          "path": "cics/cobol/BNK1CCA.cbl",
+          "language": "COBOL",
+          "lines": 808
+        },
+        {
+          "path": "cics/cobol/BNK1CCS.cbl",
+          "language": "COBOL",
+          "lines": 1400
+        },
+        {
+          "path": "cics/cobol/BNK1CRA.cbl",
+          "language": "COBOL",
+          "lines": 969
+        },
+        {
+          "path": "cics/cobol/BNK1DAC.cbl",
+          "language": "COBOL",
+          "lines": 967
+        },
+        {
+          "path": "cics/cobol/BNK1DCS.cbl",
+          "language": "COBOL",
+          "lines": 1804
+        },
+        {
+          "path": "cics/cobol/BNK1TFN.cbl",
+          "language": "COBOL",
+          "lines": 1027
+        },
+        {
+          "path": "cics/cobol/BNK1UAC.cbl",
+          "language": "COBOL",
+          "lines": 1181
+        },
+        {
+          "path": "cics/cobol/BNKMENU.cbl",
+          "language": "COBOL",
+          "lines": 1066
+        },
+        {
+          "path": "cics/bms/BNK1ACC.bms",
+          "language": "BMS",
+          "lines": 56
+        },
+        {
+          "path": "cics/bms/BNK1B2M.bms",
+          "language": "BMS",
+          "lines": 147
+        },
+        {
+          "path": "cics/bms/BNK1CAM.bms",
+          "language": "BMS",
+          "lines": 113
+        },
+        {
+          "path": "cics/bms/BNK1CCM.bms",
+          "language": "BMS",
+          "lines": 136
+        },
+        {
+          "path": "cics/bms/BNK1CDM.bms",
+          "language": "BMS",
+          "lines": 66
+        },
+        {
+          "path": "cics/bms/BNK1DAM.bms",
+          "language": "BMS",
+          "lines": 116
+        },
+        {
+          "path": "cics/bms/BNK1DCM.bms",
+          "language": "BMS",
+          "lines": 131
+        },
+        {
+          "path": "cics/bms/BNK1MAI.bms",
+          "language": "BMS",
+          "lines": 62
+        },
+        {
+          "path": "cics/bms/BNK1TFM.bms",
+          "language": "BMS",
+          "lines": 88
+        },
+        {
+          "path": "cics/bms/BNK1UAM.bms",
+          "language": "BMS",
+          "lines": 121
+        },
+        {
+          "path": "cics/copy/BANKMAP.cpy",
+          "language": "Copybook",
+          "lines": 374
+        },
+        {
+          "path": "cics/copy/CUSTMAP.cpy",
+          "language": "Copybook",
+          "lines": 108
+        },
+        {
+          "path": "cics/copy/BNK1DDM.cpy",
+          "language": "Copybook",
+          "lines": 52
+        }
+      ],
+      "extraInput": [],
+      "output": [],
+      "frontend": [
+        {
+          "path": "src/frontend/account-create.html",
+          "kind": "HTML",
+          "lines": 123
+        },
+        {
+          "path": "src/frontend/account-deposit.html",
+          "kind": "HTML",
+          "lines": 183
+        },
+        {
+          "path": "src/frontend/account-details.html",
+          "kind": "HTML",
+          "lines": 225
+        },
+        {
+          "path": "src/frontend/account-transactions.html",
+          "kind": "HTML",
+          "lines": 223
+        },
+        {
+          "path": "src/frontend/account-transfer.html",
+          "kind": "HTML",
+          "lines": 297
+        },
+        {
+          "path": "src/frontend/admin.html",
+          "kind": "HTML",
+          "lines": 112
+        },
+        {
+          "path": "src/frontend/customer-create.html",
+          "kind": "HTML",
+          "lines": 155
+        },
+        {
+          "path": "src/frontend/customer-details.html",
+          "kind": "HTML",
+          "lines": 236
+        },
+        {
+          "path": "src/frontend/index.html",
+          "kind": "HTML",
+          "lines": 14
+        },
+        {
+          "path": "src/frontend/migration-dashboard.html",
+          "kind": "HTML",
+          "lines": 27
+        },
+        {
+          "path": "src/frontend/transaction-details.html",
+          "kind": "HTML",
+          "lines": 92
+        },
+        {
+          "path": "src/frontend/js/api.js",
+          "kind": "JavaScript",
+          "lines": 492
+        },
+        {
+          "path": "src/frontend/config.js",
+          "kind": "JavaScript",
+          "lines": 38
+        }
+      ],
+      "legacyLines": 11885,
+      "outputLines": 0,
+      "tests": [],
+      "note": "Not translated to Java. The web pages in src/frontend replace the screens and call the Java API."
+    },
+    {
+      "id": "ims-java",
+      "wave": "IMS",
+      "title": "IMS Java history programs (nazare.jmp)",
+      "status": "not-converted",
+      "legacy": [
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/controller/IMSBankHistory.java",
+          "language": "Java",
+          "lines": 119
+        },
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/controller/InsertHist.java",
+          "language": "Java",
+          "lines": 76
+        },
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/controller/QueryTransaction.java",
+          "language": "Java",
+          "lines": 107
+        },
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/history/TransactionDetail.java",
+          "language": "Java",
+          "lines": 74
+        },
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/history/TransactionService.java",
+          "language": "Java",
+          "lines": 161
+        },
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/message/InputMessage.java",
+          "language": "Java",
+          "lines": 26
+        },
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/message/TranHistoryDetail.java",
+          "language": "Java",
+          "lines": 26
+        },
+        {
+          "path": "ims/java/src/main/java/nazare/jmp/message/TranHistoryOutputMessage.java",
+          "language": "Java",
+          "lines": 24
+        }
+      ],
+      "extraInput": [],
+      "output": [],
+      "frontend": [],
+      "legacyLines": 613,
+      "outputLines": 0,
+      "tests": [],
+      "note": "Not converted. IBTRAN history inserts are done directly in ImsService; history query programs have no Java equivalent yet."
+    },
+    {
+      "id": "mq",
+      "wave": "Integration",
+      "title": "MQ Bank of Q transfer clients",
+      "status": "not-converted",
+      "legacy": [
+        {
+          "path": "mq/java/src/main/java/com/ibm/boq/TransferMoneyToBOZ.java",
+          "language": "Java",
+          "lines": 70
+        },
+        {
+          "path": "mq/java/src/main/java/com/ibm/boq/TransferMoneyToBOZViaCICS.java",
+          "language": "Java",
+          "lines": 240
+        },
+        {
+          "path": "mq/java/src/main/java/com/ibm/boq/TransferMoneyToBOZViaIMS.java",
+          "language": "Java",
+          "lines": 146
+        }
+      ],
+      "extraInput": [],
+      "output": [],
+      "frontend": [],
+      "legacyLines": 456,
+      "outputLines": 0,
+      "tests": [],
+      "note": "Not converted. Needs a Spring JMS integration and an MQ broker."
+    }
+  ],
+  "tests": {
+    "source": "Maven Surefire (mvn test)",
+    "reportedAt": "2026-11-04T15:27:44+05:30",
+    "suites": [
+      {
+        "name": "BankFlowIntegrationTest",
+        "class": "com.bankz.BankFlowIntegrationTest",
+        "covers": "Customers, accounts, payments",
+        "tests": 10,
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "time": 5.898,
+        "cases": [
+          {
+            "name": "accountLifecycle",
+            "time": 0.759,
+            "status": "passed"
+          },
+          {
+            "name": "creaccValidation",
+            "time": 0.012,
+            "status": "passed"
+          },
+          {
+            "name": "crecustValidation",
+            "time": 0.012,
+            "status": "passed"
+          },
+          {
+            "name": "dbcrfunDepositWithdrawAndPaymentRules",
+            "time": 0.041,
+            "status": "passed"
+          },
+          {
+            "name": "xfrfunMovesMoneyAndLogsOnFromAccount",
+            "time": 0.035,
+            "status": "passed"
+          },
+          {
+            "name": "inqtranlFiltersPagesAndOrdersNewestFirst",
+            "time": 0.031,
+            "status": "passed"
+          },
+          {
+            "name": "companyAndSortCode",
+            "time": 0.003,
+            "status": "passed"
+          },
+          {
+            "name": "crecustAllocatesNextNumberAndWritesProctran",
+            "time": 0.022,
+            "status": "passed"
+          },
+          {
+            "name": "updcustChangesOnlyNonBlankGroups",
+            "time": 0.009,
+            "status": "passed"
+          },
+          {
+            "name": "delcusRemovesAccountsThenCustomer",
+            "time": 0.016,
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "name": "BatchIntegrationTest",
+        "class": "com.bankz.batch.BatchIntegrationTest",
+        "covers": "Batch",
+        "tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "time": 0.138,
+        "cases": [
+          {
+            "name": "bnkstmtpPrintsOneStatementPerAccount",
+            "time": 0.019,
+            "status": "passed"
+          },
+          {
+            "name": "batchEndpoints",
+            "time": 0.012,
+            "status": "passed"
+          },
+          {
+            "name": "bnkstmtcPrintsCustomerStatement",
+            "time": 0.008,
+            "status": "passed"
+          },
+          {
+            "name": "bnkstmtcValidatesSysin",
+            "time": 0.008,
+            "status": "passed"
+          },
+          {
+            "name": "bankdataRegeneratesCustomersAndCounters",
+            "time": 0.077,
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "name": "CustomerInquiryServiceTest",
+        "class": "com.bankz.customer.service.CustomerInquiryServiceTest",
+        "covers": "Customers",
+        "tests": 7,
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "time": 0.554,
+        "cases": [
+          {
+            "name": "lastCustomerLookupRetriesOnceWhenLastCustomerDeleted",
+            "time": 0.035,
+            "status": "passed"
+          },
+          {
+            "name": "missingCustomerFailsWithCode1",
+            "time": 0.011,
+            "status": "passed"
+          },
+          {
+            "name": "customerNumber0PicksRandomCustomerWithCobolFormula",
+            "time": 0.005,
+            "status": "passed"
+          },
+          {
+            "name": "randomCustomerGivesUpAfter1000Retries",
+            "time": 0.116,
+            "status": "passed"
+          },
+          {
+            "name": "customerNumber9999999999ReturnsHighestCustomer",
+            "time": 0.001,
+            "status": "passed"
+          },
+          {
+            "name": "noCustomersForSortCodeFailsWithCode9",
+            "time": 0.001,
+            "status": "passed"
+          },
+          {
+            "name": "returnsCustomerForDefaultSortCode",
+            "time": 0.0,
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "name": "CustomerControllerIntegrationTest",
+        "class": "com.bankz.customer.web.CustomerControllerIntegrationTest",
+        "covers": "Customers",
+        "tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "time": 0.033,
+        "cases": [
+          {
+            "name": "customerNumber0ReturnsAnExistingCustomer",
+            "time": 0.01,
+            "status": "passed"
+          },
+          {
+            "name": "nonNumericCustomerIdReturns400",
+            "time": 0.002,
+            "status": "passed"
+          },
+          {
+            "name": "returnsCustomerInZosConnectFormat",
+            "time": 0.004,
+            "status": "passed"
+          },
+          {
+            "name": "customerNumber9999999999ReturnsHighestCustomer",
+            "time": 0.004,
+            "status": "passed"
+          },
+          {
+            "name": "unknownCustomerReturns404WithFailCode1",
+            "time": 0.003,
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "name": "CustomerResponseTest",
+        "class": "com.bankz.customer.web.CustomerResponseTest",
+        "covers": "Customers",
+        "tests": 3,
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0,
+        "time": 0.003,
+        "cases": [
+          {
+            "name": "convertsYyyymmddIntegerLikeCobol",
+            "time": 0.0,
+            "status": "passed"
+          },
+          {
+            "name": "nullDateBecomesZerosLikeInitializedCommarea",
+            "time": 0.001,
+            "status": "passed"
+          },
+          {
+            "name": "stripsDb2CharPaddingAndMapsAllFields",
+            "time": 0.001,
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "name": "ImsIntegrationTest",
+        "class": "com.bankz.ims.ImsIntegrationTest",
+        "covers": "IMS",
+        "tests": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "time": 0.047,
+        "cases": [
+          {
+            "name": "ibtranDepositsWithdrawsAndWritesHistory",
+            "time": 0.016,
+            "status": "passed"
+          },
+          {
+            "name": "ibgcudatAndIbscudat",
+            "time": 0.006,
+            "status": "passed"
+          },
+          {
+            "name": "ibloginAndIblogout",
+            "time": 0.004,
+            "status": "passed"
+          },
+          {
+            "name": "ibacsumListsUpToSixAccounts",
+            "time": 0.004,
+            "status": "passed"
+          },
+          {
+            "name": "parsesQuotedCsv",
+            "time": 0.002,
+            "status": "passed"
+          },
+          {
+            "name": "loadProgramsLoadedAllLoadData",
+            "time": 0.003,
+            "status": "passed"
+          }
+        ]
+      }
+    ],
+    "total": 36,
+    "passed": 36,
+    "failed": 0,
+    "skipped": 0,
+    "time": 6.673
+  },
+  "coverage": {
+    "source": "JaCoCo 0.8.12",
+    "packages": [
+      {
+        "name": "com.bankz",
+        "classes": 1,
+        "lineCovered": 1,
+        "lineMissed": 2,
+        "branchCovered": 0,
+        "branchMissed": 0
+      },
+      {
+        "name": "com.bankz.account.domain",
+        "classes": 2,
+        "lineCovered": 34,
+        "lineMissed": 4,
+        "branchCovered": 0,
+        "branchMissed": 0
+      },
+      {
+        "name": "com.bankz.account.service",
+        "classes": 2,
+        "lineCovered": 64,
+        "lineMissed": 5,
+        "branchCovered": 12,
+        "branchMissed": 10
+      },
+      {
+        "name": "com.bankz.account.web",
+        "classes": 6,
+        "lineCovered": 30,
+        "lineMissed": 7,
+        "branchCovered": 8,
+        "branchMissed": 8
+      },
+      {
+        "name": "com.bankz.batch",
+        "classes": 7,
+        "lineCovered": 220,
+        "lineMissed": 37,
+        "branchCovered": 63,
+        "branchMissed": 28
+      },
+      {
+        "name": "com.bankz.common",
+        "classes": 10,
+        "lineCovered": 79,
+        "lineMissed": 19,
+        "branchCovered": 13,
+        "branchMissed": 7
+      },
+      {
+        "name": "com.bankz.common.web",
+        "classes": 3,
+        "lineCovered": 17,
+        "lineMissed": 4,
+        "branchCovered": 5,
+        "branchMissed": 3
+      },
+      {
+        "name": "com.bankz.customer.domain",
+        "classes": 2,
+        "lineCovered": 42,
+        "lineMissed": 9,
+        "branchCovered": 0,
+        "branchMissed": 0
+      },
+      {
+        "name": "com.bankz.customer.service",
+        "classes": 10,
+        "lineCovered": 133,
+        "lineMissed": 7,
+        "branchCovered": 40,
+        "branchMissed": 14
+      },
+      {
+        "name": "com.bankz.customer.web",
+        "classes": 6,
+        "lineCovered": 51,
+        "lineMissed": 4,
+        "branchCovered": 14,
+        "branchMissed": 8
+      },
+      {
+        "name": "com.bankz.ims",
+        "classes": 10,
+        "lineCovered": 107,
+        "lineMissed": 11,
+        "branchCovered": 40,
+        "branchMissed": 16
+      },
+      {
+        "name": "com.bankz.payment.service",
+        "classes": 6,
+        "lineCovered": 64,
+        "lineMissed": 4,
+        "branchCovered": 33,
+        "branchMissed": 11
+      },
+      {
+        "name": "com.bankz.payment.web",
+        "classes": 8,
+        "lineCovered": 42,
+        "lineMissed": 2,
+        "branchCovered": 9,
+        "branchMissed": 3
+      }
+    ],
+    "linePct": 88.5,
+    "branchPct": 68.7,
+    "lineCovered": 884,
+    "lineTotal": 999
+  },
+  "performance": {
+    "target": "http://localhost:8085",
+    "samples": 20,
+    "warmup": 3,
+    "measuredAt": "2026-11-04T15:49:46+05:30",
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/customers/1",
+        "legacy": "INQCUST",
+        "status": 200,
+        "medianMs": 4.5,
+        "p95Ms": 11.4,
+        "minMs": 2.9
+      },
+      {
+        "method": "GET",
+        "path": "/api/customers/1/accounts",
+        "legacy": "INQACCCU",
+        "status": 200,
+        "medianMs": 7.0,
+        "p95Ms": 14.3,
+        "minMs": 5.5
+      },
+      {
+        "method": "GET",
+        "path": "/api/accounts/1",
+        "legacy": "INQACC",
+        "status": 200,
+        "medianMs": 6.7,
+        "p95Ms": 71.5,
+        "minMs": 4.1
+      },
+      {
+        "method": "GET",
+        "path": "/api/accounts",
+        "legacy": "INQACCS",
+        "status": 200,
+        "medianMs": 5.7,
+        "p95Ms": 81.2,
+        "minMs": 3.8
+      },
+      {
+        "method": "GET",
+        "path": "/api/accounts/987654-00000001/transactions",
+        "legacy": "INQTRANL",
+        "status": 200,
+        "medianMs": 5.7,
+        "p95Ms": 7.9,
+        "minMs": 4.5
+      },
+      {
+        "method": "GET",
+        "path": "/api/company",
+        "legacy": "GETCOMPY",
+        "status": 200,
+        "medianMs": 1.0,
+        "p95Ms": 1.6,
+        "minMs": 0.8
+      },
+      {
+        "method": "GET",
+        "path": "/api/ims/customers/1",
+        "legacy": "IBGCUDAT",
+        "status": 200,
+        "medianMs": 2.7,
+        "p95Ms": 4.6,
+        "minMs": 1.8
+      },
+      {
+        "method": "GET",
+        "path": "/api/ims/accounts/1",
+        "legacy": "IBACSUM",
+        "status": 200,
+        "medianMs": 3.4,
+        "p95Ms": 9.8,
+        "minMs": 2.1
+      },
+      {
+        "method": "GET",
+        "path": "/api/batch/statements?customerId=987654-0000000001",
+        "legacy": "BNKSTMTC",
+        "status": 200,
+        "medianMs": 2.3,
+        "p95Ms": 50.3,
+        "minMs": 0.8
+      }
+    ],
+    "mainframeBaseline": null
+  },
+  "outstanding": [
+    {
+      "item": "Mainframe parity run",
+      "detail": "Run the same inputs on z/OS and on the Java app and compare balances, records and reports. Needs z/OS CICS/IMS/DB2 access."
+    },
+    {
+      "item": "Mainframe performance baseline",
+      "detail": "Response and batch times on the mainframe are not measured, so no before/after comparison yet."
+    },
+    {
+      "item": "3270 screens",
+      "detail": "BNK1* / BNKMENU / BMS maps are replaced by the web frontend, not translated to Java."
+    },
+    {
+      "item": "IMS Java and MQ clients",
+      "detail": "nazare.jmp history programs and Bank of Q MQ clients are not converted."
+    },
+    {
+      "item": "Production data migration",
+      "detail": "Real DB2/IMS data (EBCDIC, packed decimal) has not been migrated; demo data and IMS LoadData files are used."
+    },
+    {
+      "item": "OpenAPI contract check",
+      "detail": "REST routes follow src/api openapi.yaml, but no automated contract diff has been run."
+    },
+    {
+      "item": "End-to-end UI test",
+      "detail": "Not every frontend flow has been browser-tested against the Java backend."
+    },
+    {
+      "item": "Load testing",
+      "detail": "Response times are single-user samples on a laptop, not load tests on production-size PostgreSQL."
+    }
+  ]
+}

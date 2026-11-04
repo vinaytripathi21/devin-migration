@@ -1,0 +1,57 @@
+[
+  {
+    "scene": 0,
+    "name": "Cold open",
+    "record": "split frame: sim menu vs web app",
+    "assets": [
+      "screen-menu.png"
+    ]
+  },
+  {
+    "scene": 1,
+    "name": "Legacy estate",
+    "record": "run scripts/migration-inventory.py in Devin session",
+    "assets": []
+  },
+  {
+    "scene": 2,
+    "name": "Requirements",
+    "record": "open doc/reverse-engineering.md",
+    "assets": []
+  },
+  {
+    "scene": 3,
+    "name": "Legacy simulation",
+    "record": "http://localhost:3222 menu->1->customer 1, ->7->transfer",
+    "assets": [
+      "screen-customer.png",
+      "screen-transfer.png"
+    ]
+  },
+  {
+    "scene": 4,
+    "name": "Migration",
+    "record": "INQCUST.cbl vs CustomerInquiryService.java + mvn test",
+    "assets": []
+  },
+  {
+    "scene": 5,
+    "name": "Validation",
+    "record": "evidence/scenario-results.json + dashboard",
+    "assets": [
+      "bank-of-z-screens.zip"
+    ]
+  },
+  {
+    "scene": 6,
+    "name": "Honest gaps",
+    "record": "doc/comparison-validation.md section 7",
+    "assets": []
+  },
+  {
+    "scene": 7,
+    "name": "Close",
+    "record": "deliverables/ tree + dashboard Still-to-do",
+    "assets": []
+  }
+]

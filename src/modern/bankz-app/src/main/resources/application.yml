@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: bankz-app
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/bankz}
+    username: ${DB_USER:bankz}
+    password: ${DB_PASSWORD:bankz}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  flyway:
+    locations: classpath:db/migration
+
+bankz:
+  sort-code: 987654
+
+---
+spring:
+  config:
+    activate:
+      on-profile: demo
+  flyway:
+    locations: classpath:db/migration,classpath:db/demo
